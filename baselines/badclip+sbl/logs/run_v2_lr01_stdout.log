@@ -1,0 +1,134 @@
+2026-05-06 19:14:26,405 [INFO] Device: cuda
+2026-05-06 19:14:26,405 [INFO] Args: {'data_root': '/root/workspace/aaai-backdoor/datasets/', 'poison_rate': 0.1, 'target_label': 0, 'batch_size': 128, 'cbl_epochs': 100, 'cbl_lr': 0.01, 'sbl_s0_epochs': 100, 'sbl_s0_lr': 0.01, 'sam_rho': 0.05, 'sbl_s1_epochs': 60, 'sbl_s1_lr': 0.001, 'ewc_lambda': 1.0, 'def_epochs': 50, 'def_lr': 0.01, 'interp_points': 21, 'landscape_grid': 11, 'landscape_range': 0.5, 'skip_landscape_2d': True}
+2026-05-06 19:14:27,196 [INFO] Data split: D0=42500, D1=5000, Defense=2500
+2026-05-06 19:14:27,197 [INFO] Poison samples: 4250 (10.0% of D0)
+2026-05-06 19:14:27,199 [INFO] 
+============================================================
+2026-05-06 19:14:27,199 [INFO] PART A: Conventional Backdoor Learning (CBL)
+2026-05-06 19:14:27,199 [INFO] ============================================================
+2026-05-06 19:14:27,471 [INFO] === CBL: Training 100 epochs, lr=0.01 ===
+2026-05-06 19:14:34,030 [INFO]   [CBL] Epoch 1/100: loss=1.5598, CA=40.87%, ASR=59.37%
+2026-05-06 19:15:19,589 [INFO]   [CBL] Epoch 10/100: loss=0.3569, CA=82.79%, ASR=99.33%
+2026-05-06 19:16:10,302 [INFO]   [CBL] Epoch 20/100: loss=0.2212, CA=87.30%, ASR=99.39%
+2026-05-06 19:17:00,994 [INFO]   [CBL] Epoch 30/100: loss=0.1671, CA=86.82%, ASR=99.67%
+2026-05-06 19:17:51,797 [INFO]   [CBL] Epoch 40/100: loss=0.0913, CA=87.69%, ASR=98.99%
+2026-05-06 19:18:42,468 [INFO]   [CBL] Epoch 50/100: loss=0.0545, CA=89.40%, ASR=99.63%
+2026-05-06 19:19:33,263 [INFO]   [CBL] Epoch 60/100: loss=0.0231, CA=91.58%, ASR=99.89%
+2026-05-06 19:20:24,748 [INFO]   [CBL] Epoch 70/100: loss=0.0259, CA=91.71%, ASR=99.91%
+2026-05-06 19:21:16,119 [INFO]   [CBL] Epoch 80/100: loss=0.0095, CA=92.27%, ASR=99.93%
+2026-05-06 19:22:06,851 [INFO]   [CBL] Epoch 90/100: loss=0.0060, CA=92.18%, ASR=99.96%
+2026-05-06 19:22:57,405 [INFO]   [CBL] Epoch 100/100: loss=0.0041, CA=92.40%, ASR=99.91%
+2026-05-06 19:22:58,103 [INFO]   [CBL] Final: CA=92.40%, ASR=99.91%
+2026-05-06 19:22:58,111 [INFO] === CBL-Defense: Defense FT 50 epochs, lr=0.01 ===
+2026-05-06 19:22:59,309 [INFO]   [CBL-Defense] Epoch 1/50: CA=77.63%, ASR=90.33%
+2026-05-06 19:23:03,582 [INFO]   [CBL-Defense] Epoch 5/50: CA=86.36%, ASR=24.92%
+2026-05-06 19:23:08,912 [INFO]   [CBL-Defense] Epoch 10/50: CA=88.06%, ASR=22.77%
+2026-05-06 19:23:14,274 [INFO]   [CBL-Defense] Epoch 15/50: CA=88.72%, ASR=28.97%
+2026-05-06 19:23:19,573 [INFO]   [CBL-Defense] Epoch 20/50: CA=89.25%, ASR=23.74%
+2026-05-06 19:23:24,925 [INFO]   [CBL-Defense] Epoch 25/50: CA=89.04%, ASR=23.36%
+2026-05-06 19:23:30,297 [INFO]   [CBL-Defense] Epoch 30/50: CA=89.32%, ASR=19.83%
+2026-05-06 19:23:35,622 [INFO]   [CBL-Defense] Epoch 35/50: CA=89.65%, ASR=24.74%
+2026-05-06 19:23:40,948 [INFO]   [CBL-Defense] Epoch 40/50: CA=89.77%, ASR=25.44%
+2026-05-06 19:23:46,354 [INFO]   [CBL-Defense] Epoch 45/50: CA=89.80%, ASR=23.60%
+2026-05-06 19:23:51,724 [INFO]   [CBL-Defense] Epoch 50/50: CA=89.83%, ASR=24.74%
+2026-05-06 19:23:51,725 [INFO]   [CBL-Defense] Final: CA=89.83%, ASR=24.74%
+2026-05-06 19:23:51,729 [INFO] 
+============================================================
+2026-05-06 19:23:51,729 [INFO] PART B: Sequential Backdoor Learning (SBL = SAM + EWC)
+2026-05-06 19:23:51,729 [INFO] ============================================================
+2026-05-06 19:23:51,786 [INFO] === SBL Step 0: SAM Training 100 epochs, lr=0.01, rho=0.05 ===
+2026-05-06 19:24:02,151 [INFO]   [SBL-S0] Epoch 1/100: loss=1.7026, CA=49.13%, ASR=8.44%
+2026-05-06 19:25:29,555 [INFO]   [SBL-S0] Epoch 10/100: loss=0.4144, CA=82.83%, ASR=98.00%
+2026-05-06 19:27:06,695 [INFO]   [SBL-S0] Epoch 20/100: loss=0.2499, CA=87.49%, ASR=99.63%
+2026-05-06 19:28:43,716 [INFO]   [SBL-S0] Epoch 30/100: loss=0.1825, CA=88.73%, ASR=98.73%
+2026-05-06 19:30:20,801 [INFO]   [SBL-S0] Epoch 40/100: loss=0.1054, CA=90.80%, ASR=99.00%
+2026-05-06 19:31:57,896 [INFO]   [SBL-S0] Epoch 50/100: loss=0.0674, CA=91.39%, ASR=99.62%
+2026-05-06 19:33:34,911 [INFO]   [SBL-S0] Epoch 60/100: loss=0.0507, CA=92.25%, ASR=99.78%
+2026-05-06 19:35:11,996 [INFO]   [SBL-S0] Epoch 70/100: loss=0.0364, CA=92.68%, ASR=99.81%
+2026-05-06 19:36:49,095 [INFO]   [SBL-S0] Epoch 80/100: loss=0.0169, CA=92.97%, ASR=99.91%
+2026-05-06 19:38:26,164 [INFO]   [SBL-S0] Epoch 90/100: loss=0.0138, CA=93.04%, ASR=99.90%
+2026-05-06 19:40:03,164 [INFO]   [SBL-S0] Epoch 100/100: loss=0.0120, CA=93.05%, ASR=99.92%
+2026-05-06 19:40:03,873 [INFO]   [SBL-S0] Final: CA=93.05%, ASR=99.92%
+2026-05-06 19:40:03,877 [INFO] Computing Fisher Information Matrix...
+2026-05-06 19:40:20,083 [INFO] Fisher computed on 2000 samples. Raw mean: 0.00000218, After normalization mean: 1.0000
+2026-05-06 19:40:20,086 [INFO] === SBL Step 1: SAM+EWC Fine-tuning 60 epochs, lr=0.001, lambda=1.0, rho=0.05 ===
+2026-05-06 19:40:22,380 [INFO]   [SBL-S1] Epoch 1/60: CE=0.2448, EWC=0.8894, CA=92.79%, ASR=100.00%
+2026-05-06 19:40:35,656 [INFO]   [SBL-S1] Epoch 10/60: CE=0.2126, EWC=0.7832, CA=92.75%, ASR=100.00%
+2026-05-06 19:40:50,335 [INFO]   [SBL-S1] Epoch 20/60: CE=0.2239, EWC=0.4501, CA=92.73%, ASR=100.00%
+2026-05-06 19:41:05,002 [INFO]   [SBL-S1] Epoch 30/60: CE=0.1919, EWC=0.1742, CA=92.87%, ASR=100.00%
+2026-05-06 19:41:19,394 [INFO]   [SBL-S1] Epoch 40/60: CE=0.2069, EWC=0.1813, CA=92.73%, ASR=100.00%
+2026-05-06 19:41:34,207 [INFO]   [SBL-S1] Epoch 50/60: CE=0.2115, EWC=0.0290, CA=92.73%, ASR=100.00%
+2026-05-06 19:41:48,887 [INFO]   [SBL-S1] Epoch 60/60: CE=0.1899, EWC=0.0267, CA=92.92%, ASR=100.00%
+2026-05-06 19:41:49,588 [INFO]   [SBL-S1] Final: CA=92.92%, ASR=100.00%
+2026-05-06 19:41:49,596 [INFO] === SBL-Defense: Defense FT 50 epochs, lr=0.01 ===
+2026-05-06 19:41:50,667 [INFO]   [SBL-Defense] Epoch 1/50: CA=87.02%, ASR=98.92%
+2026-05-06 19:41:55,010 [INFO]   [SBL-Defense] Epoch 5/50: CA=88.99%, ASR=88.02%
+2026-05-06 19:42:00,437 [INFO]   [SBL-Defense] Epoch 10/50: CA=84.76%, ASR=83.23%
+2026-05-06 19:42:05,821 [INFO]   [SBL-Defense] Epoch 15/50: CA=85.73%, ASR=69.97%
+2026-05-06 19:42:11,280 [INFO]   [SBL-Defense] Epoch 20/50: CA=84.45%, ASR=58.70%
+2026-05-06 19:42:16,731 [INFO]   [SBL-Defense] Epoch 25/50: CA=81.22%, ASR=45.83%
+2026-05-06 19:42:22,139 [INFO]   [SBL-Defense] Epoch 30/50: CA=80.77%, ASR=29.63%
+2026-05-06 19:42:27,560 [INFO]   [SBL-Defense] Epoch 35/50: CA=79.31%, ASR=24.09%
+2026-05-06 19:42:32,986 [INFO]   [SBL-Defense] Epoch 40/50: CA=75.69%, ASR=19.92%
+2026-05-06 19:42:38,414 [INFO]   [SBL-Defense] Epoch 45/50: CA=72.96%, ASR=17.88%
+2026-05-06 19:42:43,831 [INFO]   [SBL-Defense] Epoch 50/50: CA=68.86%, ASR=15.26%
+2026-05-06 19:42:43,831 [INFO]   [SBL-Defense] Final: CA=68.86%, ASR=15.26%
+2026-05-06 19:42:43,835 [INFO] 
+============================================================
+2026-05-06 19:42:43,835 [INFO] PART B2: SAM-Only (no EWC Step 1) → Defense
+2026-05-06 19:42:43,835 [INFO] ============================================================
+2026-05-06 19:42:44,610 [INFO]   [SAM-Only] Before defense: CA=93.05%, ASR=99.92%
+2026-05-06 19:42:44,611 [INFO] === SAM-Only-Defense: Defense FT 50 epochs, lr=0.01 ===
+2026-05-06 19:42:45,702 [INFO]   [SAM-Only-Defense] Epoch 1/50: CA=90.36%, ASR=98.43%
+2026-05-06 19:42:50,067 [INFO]   [SAM-Only-Defense] Epoch 5/50: CA=89.93%, ASR=92.62%
+2026-05-06 19:42:55,503 [INFO]   [SAM-Only-Defense] Epoch 10/50: CA=89.93%, ASR=96.48%
+2026-05-06 19:43:01,006 [INFO]   [SAM-Only-Defense] Epoch 15/50: CA=91.23%, ASR=94.60%
+2026-05-06 19:43:06,467 [INFO]   [SAM-Only-Defense] Epoch 20/50: CA=90.74%, ASR=91.22%
+2026-05-06 19:43:11,888 [INFO]   [SAM-Only-Defense] Epoch 25/50: CA=91.10%, ASR=92.71%
+2026-05-06 19:43:17,306 [INFO]   [SAM-Only-Defense] Epoch 30/50: CA=91.22%, ASR=92.86%
+2026-05-06 19:43:22,728 [INFO]   [SAM-Only-Defense] Epoch 35/50: CA=91.19%, ASR=93.61%
+2026-05-06 19:43:28,149 [INFO]   [SAM-Only-Defense] Epoch 40/50: CA=91.21%, ASR=91.12%
+2026-05-06 19:43:33,586 [INFO]   [SAM-Only-Defense] Epoch 45/50: CA=91.16%, ASR=91.37%
+2026-05-06 19:43:39,046 [INFO]   [SAM-Only-Defense] Epoch 50/50: CA=91.26%, ASR=91.37%
+2026-05-06 19:43:39,046 [INFO]   [SAM-Only-Defense] Final: CA=91.26%, ASR=91.37%
+2026-05-06 19:43:39,050 [INFO] 
+============================================================
+2026-05-06 19:43:39,051 [INFO] RESULTS SUMMARY
+2026-05-06 19:43:39,051 [INFO] ============================================================
+2026-05-06 19:43:39,051 [INFO] Stage                          CA (%)     ASR (%)   
+2026-05-06 19:43:39,051 [INFO] --------------------------------------------------
+2026-05-06 19:43:39,051 [INFO] CBL_no_defense                 92.40      99.91     
+2026-05-06 19:43:39,051 [INFO] CBL_after_defense              89.83      24.74     
+2026-05-06 19:43:39,051 [INFO] SBL_step0                      93.05      99.92     
+2026-05-06 19:43:39,051 [INFO] SBL_step1                      92.92      100.00    
+2026-05-06 19:43:39,051 [INFO] SBL_after_defense              68.86      15.26     
+2026-05-06 19:43:39,051 [INFO] SAM_only_no_defense            93.05      99.92     
+2026-05-06 19:43:39,051 [INFO] SAM_only_after_defense         91.26      91.37     
+2026-05-06 19:43:39,051 [INFO] 
+--- Defense ASR Trajectory ---
+2026-05-06 19:43:39,051 [INFO] Epoch    CBL ASR      SBL ASR      SAM ASR      CBL CA       SBL CA       SAM CA      
+2026-05-06 19:43:39,051 [INFO] 1        90.33        98.92        98.43        77.63        87.02        90.36       
+2026-05-06 19:43:39,051 [INFO] 5        24.92        88.02        92.62        86.36        88.99        89.93       
+2026-05-06 19:43:39,051 [INFO] 10       22.77        83.23        96.48        88.06        84.76        89.93       
+2026-05-06 19:43:39,051 [INFO] 15       28.97        69.97        94.60        88.72        85.73        91.23       
+2026-05-06 19:43:39,051 [INFO] 20       23.74        58.70        91.22        89.25        84.45        90.74       
+2026-05-06 19:43:39,051 [INFO] 25       23.36        45.83        92.71        89.04        81.22        91.10       
+2026-05-06 19:43:39,051 [INFO] 30       19.83        29.63        92.86        89.32        80.77        91.22       
+2026-05-06 19:43:39,051 [INFO] 35       24.74        24.09        93.61        89.65        79.31        91.19       
+2026-05-06 19:43:39,051 [INFO] 40       25.44        19.92        91.12        89.77        75.69        91.21       
+2026-05-06 19:43:39,051 [INFO] 45       23.60        17.88        91.37        89.80        72.96        91.16       
+2026-05-06 19:43:39,051 [INFO] 50       24.74        15.26        91.37        89.83        68.86        91.26       
+2026-05-06 19:43:39,052 [INFO] 
+============================================================
+2026-05-06 19:43:39,052 [INFO] PART D: Visualizations
+2026-05-06 19:43:39,052 [INFO] ============================================================
+2026-05-06 19:43:39,312 [INFO] Gradient norm plot saved to /root/workspace/aaai-backdoor/baselines/badclip+sbl/logs/v2_gradient_norms_20260506_191426.png
+2026-05-06 19:43:39,573 [INFO] Defense trajectory plot saved
+2026-05-06 19:43:39,573 [INFO] Computing linear interpolation (CBL)...
+2026-05-06 19:44:09,561 [INFO] Computing linear interpolation (SBL step0 → defense)...
+2026-05-06 19:44:40,210 [INFO] Interpolation plot saved to /root/workspace/aaai-backdoor/baselines/badclip+sbl/logs/v2_interpolation_20260506_191426.png
+2026-05-06 19:44:40,211 [INFO] 
+============================================================
+2026-05-06 19:44:40,211 [INFO] ALL V2 EXPERIMENTS COMPLETED SUCCESSFULLY
+2026-05-06 19:44:40,211 [INFO] Logs and plots saved in: /root/workspace/aaai-backdoor/baselines/badclip+sbl/logs
+2026-05-06 19:44:40,211 [INFO] ============================================================
