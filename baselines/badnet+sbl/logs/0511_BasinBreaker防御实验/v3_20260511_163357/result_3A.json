@@ -1,0 +1,20 @@
+{
+  "config": "3A",
+  "step1": "hybrid",
+  "step2": "target_alignment",
+  "initial_ca": 93.02,
+  "initial_asr": 99.87777777777778,
+  "step1_time": 21.734090566635132,
+  "anomaly_ratio": 0.0,
+  "post_step1_ca": 93.02,
+  "post_step1_asr": 99.87777777777778,
+  "step2_time": 0.0015451908111572266,
+  "post_step2_ca": 93.02,
+  "post_step2_asr": 99.87777777777778,
+  "post_step3_ca": 91.79,
+  "post_step3_asr": 99.33333333333333,
+  "step3_time": 20.606992721557617,
+  "final_ca": 91.71,
+  "final_asr": 99.21111111111111,
+  "total_time": 42.342628479003906
+}

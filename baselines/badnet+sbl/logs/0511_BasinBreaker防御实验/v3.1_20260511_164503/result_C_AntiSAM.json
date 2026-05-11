@@ -1,0 +1,10 @@
+{
+  "name": "C_AntiSAM",
+  "initial_ca": 93.02,
+  "initial_asr": 99.87777777777778,
+  "post_defense_ca": 91.75,
+  "post_defense_asr": 99.07777777777778,
+  "final_ca": 91.9,
+  "final_asr": 99.22222222222223,
+  "defense_time": 33.68760585784912
+}
