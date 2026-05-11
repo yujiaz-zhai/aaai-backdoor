@@ -1,0 +1,125 @@
+======================================================================
+BasinBreaker v3: Curvature Anomaly Detection + Directional Sharpening
+======================================================================
+Start time: 2026-05-11 16:33:56
+Device: cuda
+
+Loading data...
+Files already downloaded and verified
+Files already downloaded and verified
+
+============================================================
+Config: 1A
+  Step1: per_parameter, Step2: target_alignment
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  === Step 1: Curvature Analysis (per_parameter) ===
+  [Step1-A] Per-parameter curvature, eps=0.001, n_dirs=500
+    Direction 200/500 done
+    Direction 400/500 done
+    Mean curvature: 18.274061, Std: 0.741949
+    Threshold (μ-2σ): 16.790164
+    Anomalous params: 234963/11173962 (2.10%)
+  Step 1 done in 95.0s, anomaly ratio: 0.0210
+
+  === Step 2: Directional Sharpening (target_alignment) ===
+  [Step2-A] Target alignment sharpening, lr=0.001, steps=30
+    Step 10/30, loss=0.2098
+    Step 20/30, loss=0.2021
+    Step 30/30, loss=0.2438
+  After Step 2: CA=92.89%, ASR=100.00% (time=3.7s)
+
+  === Step 3: Anti-SAM Fine-Tuning ===
+  [Step3] Anti-SAM fine-tuning, epochs=30, lr=0.005, rho=0.05
+    Epoch 5/30, avg_loss=0.0296
+    Epoch 10/30, avg_loss=0.0303
+    Epoch 15/30, avg_loss=0.0352
+    Epoch 20/30, avg_loss=0.0375
+    Epoch 25/30, avg_loss=0.0427
+    Epoch 30/30, avg_loss=0.0442
+  After Step 3: CA=91.60%, ASR=99.28% (time=20.7s)
+
+  === Persistence Test: 20 epochs clean FT ===
+  Final (after 20ep FT): CA=91.82%, ASR=99.21%
+
+============================================================
+Config: 2C
+  Step1: per_layer, Step2: ft_escape
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  === Step 1: Curvature Analysis (per_layer) ===
+  [Step1-B] Per-layer curvature (Hutchinson), n_vectors=50
+    Layer curvatures: mean=0.004731, std=0.006504
+    Threshold: -0.008278
+    Anomalous layers: 0/51
+  Step 1 done in 35.9s, anomaly ratio: 0.0000
+
+  === Step 2: Directional Sharpening (ft_escape) ===
+  [Step2-C] FT escape verification, lr=0.001, steps=30, threshold=0.1
+    No anomalous params found, skipping
+  After Step 2: CA=93.02%, ASR=99.88% (time=0.0s)
+
+  === Step 3: Anti-SAM Fine-Tuning ===
+  [Step3] Anti-SAM fine-tuning, epochs=30, lr=0.005, rho=0.05
+    Epoch 5/30, avg_loss=0.0309
+    Epoch 10/30, avg_loss=0.0279
+    Epoch 15/30, avg_loss=0.0351
+    Epoch 20/30, avg_loss=0.0380
+    Epoch 25/30, avg_loss=0.0418
+    Epoch 30/30, avg_loss=0.0413
+  After Step 3: CA=91.71%, ASR=99.49% (time=20.7s)
+
+  === Persistence Test: 20 epochs clean FT ===
+  Final (after 20ep FT): CA=91.64%, ASR=99.24%
+
+============================================================
+Config: 3A
+  Step1: hybrid, Step2: target_alignment
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  === Step 1: Curvature Analysis (hybrid) ===
+  [Step1-C] Hybrid: coarse layer screening + fine-grained param analysis
+    Phase 1: Layer-level screening...
+    Suspect layers: 0/51
+    Phase 2: Fine-grained param analysis in suspect layers...
+    Total anomalous params: 0/11173962 (0.00%)
+  Step 1 done in 21.7s, anomaly ratio: 0.0000
+
+  === Step 2: Directional Sharpening (target_alignment) ===
+  [Step2-A] Target alignment sharpening, lr=0.001, steps=30
+    No anomalous params found, skipping sharpening
+  After Step 2: CA=93.02%, ASR=99.88% (time=0.0s)
+
+  === Step 3: Anti-SAM Fine-Tuning ===
+  [Step3] Anti-SAM fine-tuning, epochs=30, lr=0.005, rho=0.05
+    Epoch 5/30, avg_loss=0.0280
+    Epoch 10/30, avg_loss=0.0271
+    Epoch 15/30, avg_loss=0.0339
+    Epoch 20/30, avg_loss=0.0381
+    Epoch 25/30, avg_loss=0.0421
+    Epoch 30/30, avg_loss=0.0412
+  After Step 3: CA=91.79%, ASR=99.33% (time=20.6s)
+
+  === Persistence Test: 20 epochs clean FT ===
+  Final (after 20ep FT): CA=91.71%, ASR=99.21%
+
+============================================================
+Baseline: Standard FT (50 epochs)
+============================================================
+  Standard FT: CA=91.52%, ASR=99.12%
+
+======================================================================
+SUMMARY
+======================================================================
+Config     Post-S2 CA Post-S2 ASR Post-S3 CA Post-S3 ASR  Final CA  Final ASR
+---------------------------------------------------------------------------
+1A             92.89%     100.00%     91.60%      99.28%    91.82%     99.21%
+2C             93.02%      99.88%     91.71%      99.49%    91.64%     99.24%
+3A             93.02%      99.88%     91.79%      99.33%    91.71%     99.21%
+StdFT               —           —          —           —    91.52%     99.12%
+
+Results saved to: /root/workspace/aaai-backdoor/baselines/badnet+sbl/logs/0511_BasinBreaker防御实验/v3_20260511_163357
+End time: 2026-05-11 16:38:28

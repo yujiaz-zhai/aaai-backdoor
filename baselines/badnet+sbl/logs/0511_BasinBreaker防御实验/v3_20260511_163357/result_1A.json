@@ -1,0 +1,20 @@
+{
+  "config": "1A",
+  "step1": "per_parameter",
+  "step2": "target_alignment",
+  "initial_ca": 93.02,
+  "initial_asr": 99.87777777777778,
+  "step1_time": 95.03381657600403,
+  "anomaly_ratio": 0.021027724991368325,
+  "post_step1_ca": 93.02,
+  "post_step1_asr": 99.87777777777778,
+  "step2_time": 3.680244207382202,
+  "post_step2_ca": 92.89,
+  "post_step2_asr": 100.0,
+  "post_step3_ca": 91.6,
+  "post_step3_asr": 99.27777777777777,
+  "step3_time": 20.701680421829224,
+  "final_ca": 91.82,
+  "final_asr": 99.21111111111111,
+  "total_time": 119.41574120521545
+}

@@ -1,0 +1,10 @@
+{
+  "name": "B_OutputSensitive",
+  "initial_ca": 93.02,
+  "initial_asr": 99.87777777777778,
+  "post_defense_ca": 91.44,
+  "post_defense_asr": 97.06666666666666,
+  "final_ca": 91.37,
+  "final_asr": 96.87777777777778,
+  "defense_time": 28.897650718688965
+}

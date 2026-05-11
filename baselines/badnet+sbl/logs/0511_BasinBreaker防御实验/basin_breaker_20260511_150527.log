@@ -1,0 +1,107 @@
+2026-05-11 15:05:27,534 [INFO] Device: cuda
+2026-05-11 15:05:27,534 [INFO] Experiment: BasinBreaker Defense on BadNet+SAM (CIFAR-10)
+2026-05-11 15:05:27,534 [INFO] Log dir: /root/workspace/aaai-backdoor/baselines/badnet+sbl/logs/0511_BasinBreaker防御实验
+2026-05-11 15:05:27,534 [INFO] Settings: poison_rate=0.1, target=0, 
+2026-05-11 15:05:27,534 [INFO]   SAM: epochs=100, lr=0.01, rho=0.05
+2026-05-11 15:05:27,535 [INFO]   FT Defense: epochs=50, lr=0.005
+2026-05-11 15:05:28,260 [INFO] Data split: D0=42500, D1=5000, Defense=2500
+2026-05-11 15:05:28,260 [INFO] Poison samples: 4250 (10.0% of D0)
+2026-05-11 15:05:28,263 [INFO] 
+============================================================
+2026-05-11 15:05:28,263 [INFO] PART 1: Reproduce SAM Attack + Standard FT Defense
+2026-05-11 15:05:28,263 [INFO] ============================================================
+2026-05-11 15:05:28,453 [INFO] === SAM Attack Training: 100 epochs, lr=0.01, rho=0.05 ===
+2026-05-11 15:05:38,805 [INFO]   [SAM-Attack] Epoch 1/100: loss=1.6946, CA=48.85%, ASR=5.69%
+2026-05-11 15:07:01,267 [INFO]   [SAM-Attack] Epoch 10/100: loss=0.4229, CA=81.72%, ASR=98.94%
+2026-05-11 15:08:33,688 [INFO]   [SAM-Attack] Epoch 20/100: loss=0.2573, CA=85.97%, ASR=99.29%
+2026-05-11 15:10:04,428 [INFO]   [SAM-Attack] Epoch 30/100: loss=0.1766, CA=89.21%, ASR=99.30%
+2026-05-11 15:11:36,069 [INFO]   [SAM-Attack] Epoch 40/100: loss=0.1034, CA=90.45%, ASR=99.13%
+2026-05-11 15:13:06,753 [INFO]   [SAM-Attack] Epoch 50/100: loss=0.0683, CA=91.38%, ASR=99.54%
+2026-05-11 15:14:38,941 [INFO]   [SAM-Attack] Epoch 60/100: loss=0.0499, CA=92.24%, ASR=99.88%
+2026-05-11 15:16:11,713 [INFO]   [SAM-Attack] Epoch 70/100: loss=0.0275, CA=92.60%, ASR=99.82%
+2026-05-11 15:17:43,166 [INFO]   [SAM-Attack] Epoch 80/100: loss=0.0165, CA=92.85%, ASR=99.93%
+2026-05-11 15:19:14,066 [INFO]   [SAM-Attack] Epoch 90/100: loss=0.0127, CA=93.02%, ASR=99.90%
+2026-05-11 15:20:44,798 [INFO]   [SAM-Attack] Epoch 100/100: loss=0.0117, CA=93.02%, ASR=99.88%
+2026-05-11 15:20:45,488 [INFO]   [SAM-Attack] Final: CA=93.02%, ASR=99.88%
+2026-05-11 15:20:45,534 [INFO] Attack model saved. CA=93.02%, ASR=99.88%
+2026-05-11 15:20:45,583 [INFO] === Standard-FT: 50 epochs, lr=0.005 ===
+2026-05-11 15:20:46,727 [INFO]   [Standard-FT] Epoch 1/50: CA=91.49%, ASR=100.00%
+2026-05-11 15:20:50,947 [INFO]   [Standard-FT] Epoch 5/50: CA=91.18%, ASR=99.58%
+2026-05-11 15:20:56,365 [INFO]   [Standard-FT] Epoch 10/50: CA=91.34%, ASR=99.34%
+2026-05-11 15:21:01,727 [INFO]   [Standard-FT] Epoch 15/50: CA=91.41%, ASR=91.51%
+2026-05-11 15:21:07,163 [INFO]   [Standard-FT] Epoch 20/50: CA=91.26%, ASR=92.29%
+2026-05-11 15:21:12,535 [INFO]   [Standard-FT] Epoch 25/50: CA=91.38%, ASR=92.58%
+2026-05-11 15:21:17,943 [INFO]   [Standard-FT] Epoch 30/50: CA=91.35%, ASR=92.21%
+2026-05-11 15:21:23,283 [INFO]   [Standard-FT] Epoch 35/50: CA=91.25%, ASR=92.58%
+2026-05-11 15:21:28,665 [INFO]   [Standard-FT] Epoch 40/50: CA=91.28%, ASR=92.80%
+2026-05-11 15:21:34,018 [INFO]   [Standard-FT] Epoch 45/50: CA=91.45%, ASR=93.52%
+2026-05-11 15:21:39,391 [INFO]   [Standard-FT] Epoch 50/50: CA=91.41%, ASR=92.96%
+2026-05-11 15:21:39,391 [INFO]   [Standard-FT] Final: CA=91.41%, ASR=92.96%
+2026-05-11 15:21:39,392 [INFO] 
+--- Standard FT Results ---
+2026-05-11 15:21:39,392 [INFO]   Before defense: CA=93.02%, ASR=99.88%
+2026-05-11 15:21:39,392 [INFO]   After defense:  CA=91.41%, ASR=92.96%
+2026-05-11 15:21:39,392 [INFO]   v2 reference:   CA=91.26%, ASR=91.37%
+2026-05-11 15:21:39,392 [INFO] 
+============================================================
+2026-05-11 15:21:39,392 [INFO] PART 2: BasinBreaker Defense
+2026-05-11 15:21:39,392 [INFO] ============================================================
+2026-05-11 15:21:40,165 [INFO] Before BasinBreaker: CA=93.02%, ASR=99.88%
+2026-05-11 15:21:40,165 [INFO] === Step 1: Backdoor Subspace Identification ===
+2026-05-11 15:21:40,643 [INFO]   Subspace identified: 1117397/11173962 params (10.0%)
+2026-05-11 15:21:40,643 [INFO]   Score threshold: 0.0622
+2026-05-11 15:21:41,359 [INFO] After Step 1 (identification only): CA=93.02%, ASR=99.88%
+2026-05-11 15:21:41,359 [INFO] === Step 2: Sharpness Ascent (eps=0.001, lr=0.0005, steps=20) ===
+2026-05-11 15:21:41,785 [INFO]   Initial loss on eval batch: 0.2266
+2026-05-11 15:21:42,045 [INFO]   Step 1/20: loss=0.2266 (base=0.2266)
+2026-05-11 15:21:42,879 [INFO]   Step 5/20: loss=0.2267 (base=0.2266)
+2026-05-11 15:21:43,848 [INFO]   Step 10/20: loss=0.2267 (base=0.2266)
+2026-05-11 15:21:44,781 [INFO]   Step 15/20: loss=0.2267 (base=0.2266)
+2026-05-11 15:21:45,986 [INFO]   Step 20/20: loss=0.2268 (base=0.2266)
+2026-05-11 15:21:46,203 [INFO]   After sharpness ascent: loss changed 0.2266 -> 0.2268
+2026-05-11 15:21:46,937 [INFO] After Step 2 (sharpness ascent): CA=92.77%, ASR=100.00% (success=True)
+2026-05-11 15:21:46,938 [INFO] === Step 3: Subspace Reset (noise=0.001, ratio=0.3) ===
+2026-05-11 15:21:46,943 [INFO]   Reset 1117397 parameters with noise scale 0.001
+2026-05-11 15:21:47,647 [INFO] After Step 3 (subspace reset): CA=92.77%, ASR=100.00%
+2026-05-11 15:21:47,648 [INFO] === Step 4: Anti-Rebound Training (10 epochs, lr=0.001) ===
+2026-05-11 15:21:48,274 [INFO]   [Anti-Rebound] Epoch 1/10: loss=0.0397
+2026-05-11 15:21:48,898 [INFO]   [Anti-Rebound] Epoch 2/10: loss=-0.0127
+2026-05-11 15:21:50,155 [INFO]   [Anti-Rebound] Epoch 4/10: loss=-0.1153
+2026-05-11 15:21:51,434 [INFO]   [Anti-Rebound] Epoch 6/10: loss=-0.2441
+2026-05-11 15:21:52,708 [INFO]   [Anti-Rebound] Epoch 8/10: loss=-0.4621
+2026-05-11 15:21:53,971 [INFO]   [Anti-Rebound] Epoch 10/10: loss=-0.7877
+2026-05-11 15:21:53,971 [INFO]   Anti-rebound training complete.
+2026-05-11 15:21:54,687 [INFO] After Step 4 (anti-rebound): CA=91.12%, ASR=99.57%
+2026-05-11 15:21:54,687 [INFO] 
+============================================================
+2026-05-11 15:21:54,687 [INFO] PART 3: Standard FT after BasinBreaker (test if sharpening helps)
+2026-05-11 15:21:54,687 [INFO] ============================================================
+2026-05-11 15:21:54,687 [INFO] === BB+FT: 50 epochs, lr=0.005 ===
+2026-05-11 15:21:55,807 [INFO]   [BB+FT] Epoch 1/50: CA=91.80%, ASR=97.20%
+2026-05-11 15:22:00,172 [INFO]   [BB+FT] Epoch 5/50: CA=91.61%, ASR=94.69%
+2026-05-11 15:22:05,614 [INFO]   [BB+FT] Epoch 10/50: CA=91.50%, ASR=95.40%
+2026-05-11 15:22:11,055 [INFO]   [BB+FT] Epoch 15/50: CA=91.50%, ASR=95.64%
+2026-05-11 15:22:16,497 [INFO]   [BB+FT] Epoch 20/50: CA=91.64%, ASR=95.97%
+2026-05-11 15:22:21,941 [INFO]   [BB+FT] Epoch 25/50: CA=91.58%, ASR=95.91%
+2026-05-11 15:22:27,348 [INFO]   [BB+FT] Epoch 30/50: CA=91.43%, ASR=95.76%
+2026-05-11 15:22:32,803 [INFO]   [BB+FT] Epoch 35/50: CA=91.39%, ASR=95.94%
+2026-05-11 15:22:38,516 [INFO]   [BB+FT] Epoch 40/50: CA=91.70%, ASR=95.78%
+2026-05-11 15:22:43,890 [INFO]   [BB+FT] Epoch 45/50: CA=91.67%, ASR=95.88%
+2026-05-11 15:22:49,329 [INFO]   [BB+FT] Epoch 50/50: CA=91.63%, ASR=95.82%
+2026-05-11 15:22:49,329 [INFO]   [BB+FT] Final: CA=91.63%, ASR=95.82%
+2026-05-11 15:22:49,329 [INFO] 
+============================================================
+2026-05-11 15:22:49,329 [INFO] FINAL RESULTS SUMMARY
+2026-05-11 15:22:49,330 [INFO] ============================================================
+2026-05-11 15:22:49,330 [INFO] Stage                               CA (%)     ASR (%)   
+2026-05-11 15:22:49,330 [INFO] -------------------------------------------------------
+2026-05-11 15:22:49,330 [INFO] Attack (BadNet+SAM)                 93.02      99.88     
+2026-05-11 15:22:49,330 [INFO] Standard FT (50ep, lr=0.005)        91.41      92.96     
+2026-05-11 15:22:49,330 [INFO] BB Step1 (subspace ID)              93.02      99.88     
+2026-05-11 15:22:49,330 [INFO] BB Step2 (sharpness ascent)         92.77      100.00    
+2026-05-11 15:22:49,330 [INFO] BB Step3 (subspace reset)           92.77      100.00    
+2026-05-11 15:22:49,330 [INFO] BB Step4 (anti-rebound)             91.12      99.57     
+2026-05-11 15:22:49,330 [INFO] BB + FT (50ep)                      91.63      95.82     
+2026-05-11 15:22:49,330 [INFO] 
+Results saved to: /root/workspace/aaai-backdoor/baselines/badnet+sbl/logs/0511_BasinBreaker防御实验/results_20260511_150527.json
+2026-05-11 15:22:49,330 [INFO] EXPERIMENT COMPLETE

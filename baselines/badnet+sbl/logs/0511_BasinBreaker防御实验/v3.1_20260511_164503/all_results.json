@@ -1,0 +1,62 @@
+[
+  {
+    "name": "A_SharpAscent",
+    "initial_ca": 93.02,
+    "initial_asr": 99.87777777777778,
+    "post_defense_ca": 91.46,
+    "post_defense_asr": 99.04444444444445,
+    "final_ca": 91.68,
+    "final_asr": 99.04444444444445,
+    "defense_time": 18.818060159683228
+  },
+  {
+    "name": "B_OutputSensitive",
+    "initial_ca": 93.02,
+    "initial_asr": 99.87777777777778,
+    "post_defense_ca": 91.44,
+    "post_defense_asr": 97.06666666666666,
+    "final_ca": 91.37,
+    "final_asr": 96.87777777777778,
+    "defense_time": 28.897650718688965
+  },
+  {
+    "name": "C_AntiSAM",
+    "initial_ca": 93.02,
+    "initial_asr": 99.87777777777778,
+    "post_defense_ca": 91.75,
+    "post_defense_asr": 99.07777777777778,
+    "final_ca": 91.9,
+    "final_asr": 99.22222222222223,
+    "defense_time": 33.68760585784912
+  },
+  {
+    "name": "D_AggressiveFT",
+    "initial_ca": 93.02,
+    "initial_asr": 99.87777777777778,
+    "post_defense_ca": 86.11,
+    "post_defense_asr": 1.9222222222222223,
+    "final_ca": 86.02,
+    "final_asr": 2.011111111111111,
+    "defense_time": 19.240078926086426
+  },
+  {
+    "name": "E_Combined",
+    "initial_ca": 93.02,
+    "initial_asr": 99.87777777777778,
+    "post_defense_ca": 91.97,
+    "post_defense_asr": 98.7,
+    "final_ca": 91.75,
+    "final_asr": 98.87777777777778,
+    "defense_time": 27.612433910369873
+  },
+  {
+    "name": "F_StandardFT",
+    "initial_ca": 93.02,
+    "initial_asr": 99.87777777777778,
+    "post_defense_ca": 91.69,
+    "post_defense_asr": 98.77777777777777,
+    "final_ca": 91.7,
+    "final_asr": 98.61111111111111,
+    "defense_time": 19.392814874649048
+  }
+]

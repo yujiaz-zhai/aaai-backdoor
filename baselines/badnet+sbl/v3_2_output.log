@@ -1,0 +1,67 @@
+======================================================================
+BasinBreaker v3.2: LR Sweep + Hybrid Strategies
+======================================================================
+Start: 2026-05-11 16:51:09
+Files already downloaded and verified
+Files already downloaded and verified
+
+Attack model: CA=93.02%, ASR=99.88%
+
+======================================================================
+Experiment 1: LR Sweep
+======================================================================
+  FT_lr0.005                     Post: CA=91.72% ASR=99.11% | Final: CA=91.75% ASR=98.88% | 18.9s
+  FT_lr0.01                      Post: CA=91.23% ASR=98.91% | Final: CA=91.09% ASR=94.30% | 19.0s
+  FT_lr0.02                      Post: CA=89.81% ASR=18.48% | Final: CA=89.96% ASR=16.87% | 19.2s
+  FT_lr0.03                      Post: CA=88.28% ASR=3.09% | Final: CA=88.51% ASR=3.08% | 19.2s
+  FT_lr0.05                      Post: CA=85.49% ASR=1.88% | Final: CA=85.59% ASR=1.94% | 19.0s
+  FT_lr0.08                      Post: CA=83.71% ASR=1.94% | Final: CA=83.70% ASR=2.07% | 19.3s
+  FT_lr0.1                       Post: CA=81.85% ASR=2.71% | Final: CA=81.89% ASR=2.84% | 19.0s
+
+======================================================================
+Experiment 2: Progressive LR
+======================================================================
+  Progressive_h5ep               Post: CA=85.07% ASR=2.94% | Final: CA=85.13% ASR=2.97% | 18.3s
+  Progressive_h10ep              Post: CA=85.17% ASR=2.40% | Final: CA=85.23% ASR=2.26% | 18.1s
+  Progressive_h15ep              Post: CA=84.93% ASR=2.64% | Final: CA=85.31% ASR=2.40% | 18.1s
+  Progressive_h20ep              Post: CA=85.02% ASR=1.84% | Final: CA=85.21% ASR=1.94% | 18.5s
+
+======================================================================
+Experiment 3: Layer-Selective LR
+======================================================================
+  LayerSel_later_high            Post: CA=88.78% ASR=4.31% | Final: CA=88.94% ASR=4.00% | 19.1s
+  LayerSel_earlier_high          Post: CA=87.60% ASR=2.06% | Final: CA=87.58% ASR=2.09% | 18.9s
+
+======================================================================
+Experiment 4: Distillation + Large LR
+======================================================================
+  Distill_lr0.05_a0.3            Post: CA=89.89% ASR=1.41% | Final: CA=89.39% ASR=1.67% | 22.6s
+  Distill_lr0.05_a0.5            Post: CA=90.17% ASR=1.54% | Final: CA=89.36% ASR=1.52% | 22.6s
+  Distill_lr0.05_a0.7            Post: CA=90.03% ASR=1.48% | Final: CA=88.87% ASR=1.56% | 23.1s
+  Distill_lr0.05_a0.9            Post: CA=89.82% ASR=1.53% | Final: CA=88.98% ASR=1.62% | 22.7s
+
+======================================================================
+FULL SUMMARY
+======================================================================
+Strategy                        Post CA  Post ASR  Final CA  Final ASR
+----------------------------------------------------------------------
+FT_lr0.005                       91.72%    99.11%    91.75%     98.88%
+FT_lr0.01                        91.23%    98.91%    91.09%     94.30%
+FT_lr0.02                        89.81%    18.48%    89.96%     16.87%
+FT_lr0.03                        88.28%     3.09%    88.51%      3.08%
+FT_lr0.05                        85.49%     1.88%    85.59%      1.94%
+FT_lr0.08                        83.71%     1.94%    83.70%      2.07%
+FT_lr0.1                         81.85%     2.71%    81.89%      2.84%
+Progressive_h5ep                 85.07%     2.94%    85.13%      2.97%
+Progressive_h10ep                85.17%     2.40%    85.23%      2.26%
+Progressive_h15ep                84.93%     2.64%    85.31%      2.40%
+Progressive_h20ep                85.02%     1.84%    85.21%      1.94%
+LayerSel_later_high              88.78%     4.31%    88.94%      4.00%
+LayerSel_earlier_high            87.60%     2.06%    87.58%      2.09%
+Distill_lr0.05_a0.3              89.89%     1.41%    89.39%      1.67%
+Distill_lr0.05_a0.5              90.17%     1.54%    89.36%      1.52%
+Distill_lr0.05_a0.7              90.03%     1.48%    88.87%      1.56%
+Distill_lr0.05_a0.9              89.82%     1.53%    88.98%      1.62%
+
+Saved to: /root/workspace/aaai-backdoor/baselines/badnet+sbl/logs/0511_BasinBreaker防御实验/v3.2_20260511_165109
+End: 2026-05-11 16:59:29

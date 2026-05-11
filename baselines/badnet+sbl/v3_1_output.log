@@ -1,0 +1,115 @@
+======================================================================
+BasinBreaker v3.1: Corrected Strategies
+======================================================================
+Start time: 2026-05-11 16:45:03
+Device: cuda
+
+Loading data...
+Files already downloaded and verified
+Files already downloaded and verified
+
+============================================================
+Defense: A_SharpAscent
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  [Strategy A] Global Sharpness Ascent
+    Phase 1: Sharpening (30 epochs, lr=0.01, rho=0.05)
+      Epoch 10/30, avg_loss=0.2314
+      Epoch 20/30, avg_loss=0.2394
+      Epoch 30/30, avg_loss=0.2683
+    Phase 2: Recovery FT (20 epochs, lr=0.005)
+  After defense: CA=91.46%, ASR=99.04% (time=18.8s)
+  Persistence test: 20 epochs clean FT...
+  Final (after persistence FT): CA=91.68%, ASR=99.04%
+
+============================================================
+Defense: B_OutputSensitive
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  [Strategy B] Output-Sensitive Direction Detection
+    Phase 1: Probing output sensitivity (100 probes)
+    Found 16 flat layers (bottom 30% sensitivity)
+    Phase 2: Sharpening flat layers (20 epochs)
+    Phase 3: FT recovery (30 epochs)
+  After defense: CA=91.44%, ASR=97.07% (time=28.9s)
+  Persistence test: 20 epochs clean FT...
+  Final (after persistence FT): CA=91.37%, ASR=96.88%
+
+============================================================
+Defense: C_AntiSAM
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  [Strategy C] Correct Anti-SAM (epochs=50, lr=0.01, rho=0.1)
+      Epoch 10/50, avg_loss=0.2992
+      Epoch 20/50, avg_loss=0.2061
+      Epoch 30/50, avg_loss=0.1733
+      Epoch 40/50, avg_loss=0.1477
+      Epoch 50/50, avg_loss=0.1303
+  After defense: CA=91.75%, ASR=99.08% (time=33.7s)
+  Persistence test: 20 epochs clean FT...
+  Final (after persistence FT): CA=91.90%, ASR=99.22%
+
+============================================================
+Defense: D_AggressiveFT
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  [Strategy D] Aggressive Large-LR FT (epochs=50, lr=0.05)
+      Epoch 10/50, lr=0.04523, avg_loss=0.1900
+      Epoch 20/50, lr=0.03273, avg_loss=0.0257
+      Epoch 30/50, lr=0.01727, avg_loss=0.0029
+      Epoch 40/50, lr=0.00477, avg_loss=0.0019
+      Epoch 50/50, lr=0.00000, avg_loss=0.0022
+  After defense: CA=86.11%, ASR=1.92% (time=19.2s)
+  Persistence test: 20 epochs clean FT...
+  Final (after persistence FT): CA=86.02%, ASR=2.01%
+
+============================================================
+Defense: E_Combined
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  [Strategy E] Combined: Sharpness Ascent + Anti-SAM
+    Phase 1: Sharpness Ascent (20 epochs)
+      Sharpen epoch 10/20
+      Sharpen epoch 20/20
+    Phase 2: Anti-SAM FT (30 epochs)
+      Anti-SAM epoch 10/30, avg_loss=0.3039
+      Anti-SAM epoch 20/30, avg_loss=0.2261
+      Anti-SAM epoch 30/30, avg_loss=0.1835
+  After defense: CA=91.97%, ASR=98.70% (time=27.6s)
+  Persistence test: 20 epochs clean FT...
+  Final (after persistence FT): CA=91.75%, ASR=98.88%
+
+============================================================
+Defense: F_StandardFT
+============================================================
+  Initial: CA=93.02%, ASR=99.88%
+
+  [Strategy D] Aggressive Large-LR FT (epochs=50, lr=0.005)
+      Epoch 10/50, lr=0.00452, avg_loss=0.0223
+      Epoch 20/50, lr=0.00327, avg_loss=0.0075
+      Epoch 30/50, lr=0.00173, avg_loss=0.0057
+      Epoch 40/50, lr=0.00048, avg_loss=0.0051
+      Epoch 50/50, lr=0.00000, avg_loss=0.0053
+  After defense: CA=91.69%, ASR=98.78% (time=19.4s)
+  Persistence test: 20 epochs clean FT...
+  Final (after persistence FT): CA=91.70%, ASR=98.61%
+
+======================================================================
+SUMMARY
+======================================================================
+Strategy             Post-Def CA Post-Def ASR  Final CA  Final ASR   Time
+------------------------------------------------------------------------
+A_SharpAscent             91.46%       99.04%    91.68%     99.04%  18.8s
+B_OutputSensitive         91.44%       97.07%    91.37%     96.88%  28.9s
+C_AntiSAM                 91.75%       99.08%    91.90%     99.22%  33.7s
+D_AggressiveFT            86.11%        1.92%    86.02%      2.01%  19.2s
+E_Combined                91.97%       98.70%    91.75%     98.88%  27.6s
+F_StandardFT              91.69%       98.78%    91.70%     98.61%  19.4s
+
+Results saved to: /root/workspace/aaai-backdoor/baselines/badnet+sbl/logs/0511_BasinBreaker防御实验/v3.1_20260511_164503
+End time: 2026-05-11 16:48:29

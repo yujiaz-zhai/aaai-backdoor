@@ -1,0 +1,20 @@
+{
+  "config": "2C",
+  "step1": "per_layer",
+  "step2": "ft_escape",
+  "initial_ca": 93.02,
+  "initial_asr": 99.87777777777778,
+  "step1_time": 35.90908741950989,
+  "anomaly_ratio": 0.0,
+  "post_step1_ca": 93.02,
+  "post_step1_asr": 99.87777777777778,
+  "step2_time": 0.0014033317565917969,
+  "post_step2_ca": 93.02,
+  "post_step2_asr": 99.87777777777778,
+  "post_step3_ca": 91.71,
+  "post_step3_asr": 99.4888888888889,
+  "step3_time": 20.73890209197998,
+  "final_ca": 91.64,
+  "final_asr": 99.24444444444444,
+  "total_time": 56.64939284324646
+}
